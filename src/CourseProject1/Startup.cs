@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using CourseProject1.Models;
 
 namespace CourseProject1
 {
@@ -40,7 +41,7 @@ namespace CourseProject1
         {
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddDbContext<ApplicationDbContext>(
+            services.AddDbContext<ProfileContext>(
                 options => options.UseSqlServer(Configuration["ConnectionStrings: DefaultConnection"]));
 
             services.AddMvc();
